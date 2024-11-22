@@ -1,12 +1,18 @@
 "use client";
 import { Button } from "@nextui-org/react";
+import Image from "next/image";
 import Link from "next/link";
 import React from "react";
 import { IoArrowBackOutline } from "react-icons/io5";
-
+import bg from "@/public/herobg.png";
 const Hero = () => {
   return (
-    <section className="bg-[url('../public/herobg.png')] w-full h-[90vh] min-h-[768px] bg-cover bg-center bg-no-repeat relative text-white">
+    <section className="w-full h-[90vh] min-h-[768px] bg-cover bg-center bg-no-repeat relative text-white">
+      <Image
+        src={bg}
+        alt="background"
+        className="absolute object-cover w-full h-full"
+      />
       <div className="w-full h-full absolute bg-[#189CCE15]" />
       <div className="w-full h-full absolute bg-[#00000070]" />
       <div className="flex justify-center pt-[25rem] relative">
