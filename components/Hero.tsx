@@ -3,7 +3,6 @@ import { Button } from "@nextui-org/react";
 import Link from "next/link";
 import React from "react";
 import { IoArrowBackOutline } from "react-icons/io5";
-import Search from "./Search";
 
 const Hero = () => {
   return (
@@ -28,7 +27,6 @@ const Hero = () => {
           </Link>
         </div>
       </div>
-      <Search />
     </section>
   );
 };
