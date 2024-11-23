@@ -63,8 +63,20 @@ export const destinations = [
     img: place4,
   },
   {
+    name: "ولاية بوشر",
+    img: place1,
+  },
+  {
     name: "محافظة ظفار",
     img: place5,
+  },
+  {
+    name: "ولاية صلالة",
+    img: place2,
+  },
+  {
+    name: "ولاية مسقط",
+    img: place3,
   },
 ];
 
