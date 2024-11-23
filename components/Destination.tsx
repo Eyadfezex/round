@@ -14,9 +14,7 @@ import Link from "next/link";
 import { destinations } from "@/constants";
 
 const Destination = () => {
-  const [pageWidth, setPageWidth] = useState(() =>
-    window.innerWidth >= 1024 ? 5 : 3
-  );
+  const [pageWidth, setPageWidth] = useState(3);
 
   const handleResize = useCallback(() => {
     const width = window.innerWidth;
@@ -24,6 +22,7 @@ const Destination = () => {
   }, []);
 
   useEffect(() => {
+    handleResize();
     window.addEventListener("resize", handleResize);
     return () => {
       window.removeEventListener("resize", handleResize);
