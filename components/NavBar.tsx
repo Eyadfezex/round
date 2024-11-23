@@ -19,6 +19,10 @@ import { usePathname } from "next/navigation";
 
 const NavBar = () => {
   const pathname = usePathname();
+  if (pathname === "/signin") {
+    return null;
+  }
+
   return (
     <header className="absolute w-full z-10 text-white">
       <nav className="flex justify-center pt-[15.6px] pb-[28.8px] bg-black bg-opacity-60">
@@ -69,7 +73,7 @@ const NavBar = () => {
               </Dropdown>
             </div>
           </div>
-          <div className="w-full pt-[28.5px] flex  justify-between items-center">
+          <div className="w-full pt-[28.5px] flex justify-between items-center">
             <Link href="/">
               <Image src={logo} alt="logo" />
             </Link>
@@ -79,14 +83,14 @@ const NavBar = () => {
                   key={i}
                   href={item.url}
                   className={`font-bold text-xs after:absolute after:bg-secondary after:top-[130%] after:left-0 after:w-0 after:h-[3px] after:rounded-full relative hover:after:w-full after:duration-250 ${
-                    pathname == item.url && "after:w-full"
+                    pathname === item.url && "after:w-full"
                   }`}
                 >
                   {item.name}
                 </Link>
               ))}
             </div>
-            <Link href="#">
+            <Link href="/signin">
               <Button className="bg-secondary rounded-full [box-shadow:0px_0px_20px_0px_rgba(24,156,206,1)] p-6">
                 <div className="flex items-center gap-2">
                   <IoPersonOutline color="white" size={17} />

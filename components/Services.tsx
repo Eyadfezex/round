@@ -1,0 +1,102 @@
+"use client";
+import React from "react";
+import Image from "next/image";
+import place6 from "@/public/place6.png";
+import place7 from "@/public/place7.png";
+import service1 from "@/public/svgs/service1.svg";
+import service2 from "@/public/svgs/service2.svg";
+import service3 from "@/public/svgs/service3.svg";
+import service4 from "@/public/svgs/service4.svg";
+import sun from "@/public/svgs/sun.svg";
+const Services = () => {
+  return (
+    <section className="relative group">
+      <Image
+        src={sun}
+        alt="sun"
+        className="absolute bottom-[12rem] xl:bottom-[7rem] xl:right-[14rem] right-[5rem] group-hover:bottom-[10rem] xl:group-hover:bottom-[4rem] xl:group-hover:right-[8rem] duration-250"
+      />
+      <div className="flex justify-center py-[4rem]">
+        <div className="flex justify-center gap-5  w-[90%] xl:w-[80%] max-w-[1920px]">
+          <div className="relative w-full xl:w-[38rem] 2xl:w-[45rem] h-[40rem]">
+            <div className="relative w-[250px] h-[350px] xl:w-[297px] top-20 xl:h-[447px] rounded-full overflow-hidden z-10 group-hover:top-[7.8rem] duration-250">
+              <Image
+                src={place6}
+                alt="image"
+                width={1000}
+                height={1000}
+                className="absolute w-full h-full object-cover group-hover:scale-110 duration-250"
+              />
+            </div>
+            <div className="absolute w-[300px] h-[500px] xl:w-[343px] top-0 left-[15%] xl:left-[20%] 2xl:left-[30%] group-hover:left-[20%] xl:group-hover:left-[34%] group-hover:-top-[1rem] duration-250  xl:h-[581px] rounded-full rounded-bl-[120rem] overflow-hidden">
+              <Image
+                src={place7}
+                alt="image"
+                width={1000}
+                height={1000}
+                className="absolute w-full h-full object-cover group-hover:scale-110 duration-250"
+              />
+            </div>
+          </div>
+          <div className="flex flex-col items-start w-full xl:w-[40%] gap-[2rem]">
+            <h2 className="font-bold text-2xl text-tertiary">الخدمات</h2>
+            <p className="text-primary font-bold text-lg">
+              توفر شركة Round In Oman العديد من الخدمات <br /> المتنوعة والمميزة
+              استكشفها واستمتع معنا
+            </p>
+            <div className="flex flex-col gap-3 text-primary">
+              <div className="flex items-center gap-3 rounded-[30px] p-4 shadow-xl max-w-[425px] group-hover:-translate-x-[1rem] duration-250">
+                <Image src={service1} alt="service" />
+                <div>
+                  <h3 className="font-bold text-tertiary text-sm">
+                    خدمات الرحلات
+                  </h3>
+                  <p className="font-semibold  text-sm">
+                    فرصة رائعة لاكتشاف أماكن جديدة وتجربة مغامرات مميزة{" "}
+                  </p>
+                </div>
+              </div>
+              <div className="flex items-center gap-3 rounded-[30px] p-4 shadow-xl  max-w-[425px] group-hover:translate-x-[1rem] duration-250">
+                <Image src={service2} alt="service" />
+                <div>
+                  <h3 className="font-bold text-tertiary text-sm">
+                    خدمات التنقل
+                  </h3>
+                  <p className="font-semibold  text-sm">
+                    يمكنك حجز تاكسي أو تأجير سيارة حسب طلبك لإكمال راحتك معنا{" "}
+                  </p>
+                </div>
+              </div>
+              <div className="flex items-center gap-3 rounded-[30px] p-4 shadow-xl  max-w-[425px] group-hover:-translate-x-[1rem] duration-250">
+                <Image src={service3} alt="service" />
+                <div>
+                  <h3 className="font-bold text-tertiary text-sm">
+                    الخدمات الترفيهية
+                  </h3>
+                  <p className="font-semibold  text-sm">
+                    وسيلة رائعة لإضافة المتعة والتنوع إلى رحلتك. اختيار الأنشطة
+                    الترفيهية التي تناسب اهتماماتهم{" "}
+                  </p>
+                </div>
+              </div>
+              <div className="flex items-center gap-3 rounded-[30px] p-4 shadow-xl  max-w-[425px] group-hover:translate-x-[1rem] duration-250">
+                <Image src={service4} alt="service" />
+                <div>
+                  <h3 className="font-bold text-tertiary text-sm">
+                    خدمة حجز الفنادق
+                  </h3>
+                  <p className="font-semibold  text-sm">
+                    خدمة حجز الفندق هي طريقة مريحة وسهلة لضمان مكان إقامة مناسب
+                    أثناء الرحلات{" "}
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  );
+};
+
+export default Services;

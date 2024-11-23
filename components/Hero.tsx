@@ -5,6 +5,8 @@ import Link from "next/link";
 import React from "react";
 import { IoArrowBackOutline } from "react-icons/io5";
 import bg from "@/public/herobg.png";
+import Search from "./Search";
+
 const Hero = () => {
   return (
     <section className="w-full h-[90vh] min-h-[768px] bg-cover bg-center bg-no-repeat relative text-white">
@@ -24,7 +26,10 @@ const Hero = () => {
             </h2>
           </div>
           <Link href="#">
-            <Button className="bg-secondary rounded-full p-6 [box-shadow:0px_0px_20px_0px_rgba(24,156,206,1)]">
+            <Button
+              className="bg-secondary rounded-full p-6 [box-shadow:0px_0px_20px_0px_rgba(24,156,206,1)]"
+              color="secondary"
+            >
               <div className="flex items-center gap-2">
                 <span className="text-white font-bold">احجز الآن</span>
                 <IoArrowBackOutline color="white" size={17} />
@@ -32,6 +37,9 @@ const Hero = () => {
             </Button>
           </Link>
         </div>
+      </div>
+      <div className="flex justify-center">
+        <Search />
       </div>
     </section>
   );

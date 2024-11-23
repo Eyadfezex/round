@@ -1,7 +1,8 @@
 "use client";
-import React from "react";
+import React, { useCallback, useEffect, useState } from "react";
 import { Pagination } from "swiper/modules";
 import circle from "@/public/svgs/circle.svg";
+import summer from "@/public/summer.png";
 import waves from "@/public/svgs/waves.svg";
 import { Swiper, SwiperSlide } from "swiper/react";
 import Image from "next/image";
@@ -11,18 +12,36 @@ import "swiper/css/pagination";
 import "swiper/css/scrollbar";
 import Link from "next/link";
 import { destinations } from "@/constants";
+
 const Destination = () => {
+  const [pageWidth, setPageWidth] = useState(() =>
+    window.innerWidth >= 1024 ? 5 : 3
+  );
+
+  const handleResize = useCallback(() => {
+    const width = window.innerWidth;
+    setPageWidth(width >= 1440 ? 5 : width >= 1024 ? 4 : 3);
+  }, []);
+
+  useEffect(() => {
+    window.addEventListener("resize", handleResize);
+    return () => {
+      window.removeEventListener("resize", handleResize);
+    };
+  }, [handleResize]);
+
   return (
     <section className="relative">
       <Image
-        src={waves}
-        alt="waves"
-        className=" absolute right-0 top-[619px]"
+        src={summer}
+        alt="summer"
+        className="absolute left-36 top-[607px]"
       />
+      <Image src={waves} alt="waves" className="absolute right-0 top-[619px]" />
       <Image
         src={circle}
         alt="circle"
-        className=" absolute -right-[9rem] top-[112px]"
+        className="absolute -right-[9rem] top-[112px]"
       />
       <div className="flex justify-center py-[126px]">
         <div className="flex flex-col items-center w-[90%] max-w-[1920px] gap-[3rem]">
@@ -35,7 +54,7 @@ const Destination = () => {
             </h3>
           </div>
           <Swiper
-            slidesPerView={5}
+            slidesPerView={pageWidth}
             className="w-full h-[22rem]"
             modules={[Pagination]}
             pagination={{ clickable: true }}
