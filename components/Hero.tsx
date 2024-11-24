@@ -13,6 +13,9 @@ const Hero = () => {
       <Image
         src={bg}
         alt="background"
+        fetchPriority="high"
+        loading="eager"
+        priority
         className="absolute object-cover w-full h-full"
       />
       <div className="w-full h-full absolute bg-[#189CCE15]" />
