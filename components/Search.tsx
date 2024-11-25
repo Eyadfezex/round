@@ -130,7 +130,7 @@ const Search = () => {
                       minValue={1}
                       classNames={{
                         track: cn("border-x-0 bg-gray-400 rounded-l-full"),
-                        mark: cn("w-[5rem] "),
+                        mark: cn("w-[3rem] "),
                       }}
                       step={1}
                       value={price}
