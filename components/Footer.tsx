@@ -30,7 +30,7 @@ const Footer = () => {
       <div className="relative flex justify-center">
         <div className="flex flex-col w-[90%] max-w-[1920px] divide divide-y">
           <div className="flex justify-between pb-[25.5px] pt-[36px]">
-            <div className="flex flex-col gap-10 max-w-[600px]">
+            <div className="flex flex-col gap-10 max-w-[250px] xl:max-w-[600px]">
               <Link href="/" className="w-fit">
                 <Image src={logo} alt="logo" width={100} height={100} />
               </Link>

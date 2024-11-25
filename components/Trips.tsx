@@ -1,10 +1,11 @@
 "use client";
 import { Button } from "@nextui-org/button";
 import Link from "next/link";
-import React from "react";
+import React, { useCallback, useEffect, useState } from "react";
 import tripsimg from "@/public/trips.png";
 import { IoArrowBackOutline } from "react-icons/io5";
 import Image from "next/image";
+import tree from "@/public/svgs/tree.svg";
 import { Swiper, SwiperSlide, useSwiper } from "swiper/react";
 import { IoIosArrowRoundBack } from "react-icons/io";
 import { IoIosArrowRoundForward } from "react-icons/io";
@@ -15,6 +16,21 @@ import { trips } from "@/constants";
 import { Navigation } from "swiper/modules";
 const Trips = () => {
   const swiper = useSwiper();
+  const [pageWidth, setPageWidth] = useState(3);
+
+  const handleResize = useCallback(() => {
+    const width = window.innerWidth;
+    setPageWidth(width >= 1440 ? 3 : width >= 1024 ? 2.1 : 2);
+  }, []);
+
+  useEffect(() => {
+    handleResize();
+    window.addEventListener("resize", handleResize);
+    return () => {
+      window.removeEventListener("resize", handleResize);
+    };
+  }, [handleResize]);
+
   return (
     <section className="relative">
       <Image
@@ -22,6 +38,8 @@ const Trips = () => {
         alt="trips"
         className="absolute w-full h-[70%] object-cover"
       />
+      <Image src={tree} alt="trips" className="absolute -bottom-[4.5rem]" />
+
       <div className="flex justify-center py-[32px] relative">
         <div className="flex flex-col w-[90%] max-w-[1920px]">
           <div className="flex justify-end">
@@ -67,7 +85,8 @@ const Trips = () => {
               </div>
             </div>
             <Swiper
-              slidesPerView={4}
+              simulateTouch
+              slidesPerView={pageWidth}
               className="w-[100%]"
               modules={[Navigation]}
               navigation={{

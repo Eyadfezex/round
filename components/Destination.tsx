@@ -18,7 +18,7 @@ const Destination = () => {
 
   const handleResize = useCallback(() => {
     const width = window.innerWidth;
-    setPageWidth(width >= 1440 ? 5 : width >= 1024 ? 4 : 3);
+    setPageWidth(width >= 1440 ? 4 : width >= 1024 ? 3 : 2);
   }, []);
 
   useEffect(() => {
