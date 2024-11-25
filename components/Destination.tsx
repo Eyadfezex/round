@@ -22,7 +22,9 @@ const Destination: React.FC = () => {
   // Handles the screen resize event to adjust the Swiper's slidesPerView
   const handleResize = useCallback(() => {
     const width = window.innerWidth;
-    setPageWidth(width >= 1440 ? 4 : width >= 1024 ? 3 : 2.5);
+    setPageWidth(
+      width >= 1440 ? 4.5 : width >= 1024 ? 3 : width >= 768 ? 2.4 : 1.45
+    );
   }, []);
 
   // Add/remove event listener for window resize

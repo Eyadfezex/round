@@ -21,7 +21,9 @@ const Trips = () => {
   const swiper = useSwiper();
   const handleResize = useCallback(() => {
     const width = window.innerWidth;
-    setPageWidth(width >= 1440 ? 3 : width >= 1024 ? 2.1 : 1.7);
+    setPageWidth(
+      width >= 1440 ? 4 : width >= 1024 ? 3 : width >= 768 ? 2.4 : 1.45
+    );
   }, []);
 
   useEffect(() => {
