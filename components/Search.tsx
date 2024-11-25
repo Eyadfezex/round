@@ -1,4 +1,5 @@
 "use client";
+
 import { Slider, cn } from "@nextui-org/react";
 import {
   Dropdown,
@@ -13,6 +14,7 @@ import Link from "next/link";
 import { Button, Radio, RadioGroup } from "@nextui-org/react";
 import { IoArrowBackOutline } from "react-icons/io5";
 
+// Custom Radio Component for better organization and handling.
 const CustomRadio = (props: any) => {
   const { children, option, ...otherProps } = props;
 
@@ -39,10 +41,11 @@ const Search = () => {
   const [price, setPrice] = React.useState(50);
 
   return (
-    <div className=" absolute top-[82%] lg:top-[92%] text-[#7A7A7A] z-10">
+    <div className="absolute top-[82%] lg:top-[92%] text-[#7A7A7A] z-10">
       <div className="flex justify-center">
         <div className="bg-white w-[25rem] lg:w-full rounded-3xl py-[22px]  border border-secondary px-6 lg:px-[45px] shadow-xl flex items-end justify-between gap-3">
-          <div className="flex flex-col  lg:flex-row items-center gap-3">
+          <div className="flex flex-col lg:flex-row items-center gap-3">
+            {/* Trip Type Dropdown */}
             <div className="flex flex-col gap-2">
               <h2 className="text-sm font-bold">نوع الرحلة</h2>
               <Dropdown className="min-w-[210px]">
@@ -74,6 +77,8 @@ const Search = () => {
                 </DropdownMenu>
               </Dropdown>
             </div>
+
+            {/* Destination Dropdown */}
             <div className="flex flex-col gap-2">
               <h2 className="text-sm font-bold">الوجهات</h2>
               <Dropdown className="max-w-[210px]">
@@ -106,6 +111,8 @@ const Search = () => {
                 </DropdownMenu>
               </Dropdown>
             </div>
+
+            {/* Price Range Slider */}
             <div className="flex flex-col gap-2">
               <h2 className="text-sm font-bold">السعر</h2>
               <Dropdown>
@@ -122,7 +129,7 @@ const Search = () => {
                       maxValue={500}
                       minValue={1}
                       classNames={{
-                        track: cn("border-x-0   bg-gray-400 rounded-l-full"),
+                        track: cn("border-x-0 bg-gray-400 rounded-l-full"),
                         mark: cn("w-[5rem] "),
                       }}
                       step={1}
@@ -150,6 +157,8 @@ const Search = () => {
               </Dropdown>
             </div>
           </div>
+
+          {/* Search Button */}
           <Link href="#">
             <Button className="bg-secondary rounded-full p-6">
               <div className="flex items-center gap-2">

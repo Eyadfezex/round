@@ -1,4 +1,5 @@
 "use client";
+
 import { Button } from "@nextui-org/react";
 import Image from "next/image";
 import Link from "next/link";
@@ -9,19 +10,25 @@ import Search from "./Search";
 
 const Hero = () => {
   return (
-    <section className="w-full h-[70hv] lg:h-[90vh] min-h-[768px] bg-cover bg-center bg-no-repeat relative text-white">
+    <section className="w-full h-[70vh] lg:h-[90vh] min-h-[768px] bg-cover bg-center bg-no-repeat relative text-white">
+      {/* Hero background image */}
       <Image
         src={bg}
-        alt="background"
+        alt="A scenic view of a travel destination"
         fetchPriority="high"
         loading="eager"
         priority
         className="absolute object-cover w-full h-full"
       />
+
+      {/* Overlay for color tint */}
       <div className="w-full h-full absolute bg-[#189CCE15]" />
       <div className="w-full h-full absolute bg-[#00000070]" />
+
+      {/* Hero content */}
       <div className="flex justify-center pt-[25rem] relative">
         <div className="flex flex-col w-[95%] lg:w-[90%] max-w-[1920px] gap-12">
+          {/* Headline */}
           <div>
             <h1 className="text-[calc(1rem+2vw)] font-bold">
               اجعل رحلتـك أكثر تحـدياً
@@ -30,7 +37,9 @@ const Hero = () => {
               اسـكتشف العديد من الرحلات و الخدمات الرائعة
             </h2>
           </div>
-          <Link href="#">
+
+          {/* Call to Action Button */}
+          <Link href="#booking">
             <Button
               className="bg-secondary rounded-full p-6 [box-shadow:0px_0px_20px_0px_rgba(24,156,206,1)]"
               color="secondary"
@@ -43,6 +52,8 @@ const Hero = () => {
           </Link>
         </div>
       </div>
+
+      {/* Search Component */}
       <div className="flex justify-center">
         <Search />
       </div>
