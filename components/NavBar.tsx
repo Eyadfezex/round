@@ -1,9 +1,11 @@
 "use client";
 import { homeLinks, socialIcons } from "@/constants";
 import Link from "next/link";
-import React from "react";
+import React, { useState } from "react";
 import ReactCountryFlag from "react-country-flag";
 import Image from "next/image";
+import { GoDotFill } from "react-icons/go";
+import { Turn as Hamburger } from "hamburger-react";
 import logo from "@/public/logo.png";
 import {
   Dropdown,
@@ -16,17 +18,24 @@ import { FaAngleDown } from "react-icons/fa6";
 import { GrLanguage } from "react-icons/gr";
 import { IoPersonOutline } from "react-icons/io5";
 import { usePathname } from "next/navigation";
+import { motion } from "framer-motion";
 
 const NavBar = () => {
   const pathname = usePathname();
   if (pathname === "/signin") {
     return null;
   }
-
+  const [isOpen, setOpen] = useState(false);
+  const handleOpen = () => {
+    setOpen((prevState) => !prevState);
+    setTimeout(() => {
+      setOpen(false);
+    }, 3000);
+  };
   return (
-    <header className="absolute w-full z-10 text-white">
+    <header className="absolute w-full z-10 text-white overflow-x-clip">
       <nav className="flex justify-center pt-[15.6px] pb-[28.8px] bg-black bg-opacity-60">
-        <div className="flex flex-col w-[90%] max-w-[1920px] divide divide-y">
+        <div className="flex flex-col w-[95%] lg:w-[90%] max-w-[1920px] divide divide-y">
           <div className="w-full flex justify-between pb-[15.6px] items-center">
             <div className="flex items-center gap-2">
               {socialIcons.map((item, i) => (
@@ -77,7 +86,7 @@ const NavBar = () => {
             <Link href="/">
               <Image src={logo} alt="logo" />
             </Link>
-            <div className="flex items-center gap-6 pr-10">
+            <div className="lg:flex items-center gap-4 lg:gap-6 lg:pr-10 hidden">
               {homeLinks.map((item, i) => (
                 <Link
                   key={i}
@@ -90,7 +99,7 @@ const NavBar = () => {
                 </Link>
               ))}
             </div>
-            <Link href="/signin">
+            <Link href="/signin" className="hidden lg:block">
               <Button className="bg-secondary rounded-full [box-shadow:0px_0px_20px_0px_rgba(24,156,206,1)] p-6">
                 <div className="flex items-center gap-2">
                   <IoPersonOutline color="white" size={17} />
@@ -98,6 +107,41 @@ const NavBar = () => {
                 </div>
               </Button>
             </Link>
+            <div className="lg:hidden">
+              <motion.div>
+                <Hamburger
+                  direction="right"
+                  toggled={isOpen}
+                  toggle={handleOpen}
+                />
+              </motion.div>
+              <motion.div
+                className="absolute -bottom-[21.5rem] left-0 bg-white text-black px-4 py-7"
+                initial={{ left: -200 }}
+                animate={isOpen ? { left: 0 } : {}}
+              >
+                <div className="flex flex-col gap-2">
+                  {homeLinks.map((item, i) => (
+                    <Link
+                      key={i}
+                      href={item.url}
+                      className="flex items-center gap-1"
+                    >
+                      <GoDotFill className="text-secondary" />
+                      {item.name}
+                    </Link>
+                  ))}
+                  <Link href="/signin" className="mt-[3rem]">
+                    <Button className="bg-secondary rounded-full [box-shadow:0px_0px_20px_0px_rgba(24,156,206,1)] p-6">
+                      <div className="flex items-center gap-2">
+                        <IoPersonOutline color="white" size={17} />
+                        <span className="text-white font-bold">التسجيل</span>
+                      </div>
+                    </Button>
+                  </Link>
+                </div>
+              </motion.div>
+            </div>
           </div>
         </div>
       </nav>

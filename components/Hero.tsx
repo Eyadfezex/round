@@ -9,7 +9,7 @@ import Search from "./Search";
 
 const Hero = () => {
   return (
-    <section className="w-full h-[90vh] min-h-[768px] bg-cover bg-center bg-no-repeat relative text-white">
+    <section className="w-full h-[70hv] lg:h-[90vh] min-h-[768px] bg-cover bg-center bg-no-repeat relative text-white">
       <Image
         src={bg}
         alt="background"
@@ -21,10 +21,12 @@ const Hero = () => {
       <div className="w-full h-full absolute bg-[#189CCE15]" />
       <div className="w-full h-full absolute bg-[#00000070]" />
       <div className="flex justify-center pt-[25rem] relative">
-        <div className="flex flex-col w-[90%] max-w-[1920px] gap-12">
+        <div className="flex flex-col w-[95%] lg:w-[90%] max-w-[1920px] gap-12">
           <div>
-            <h1 className="text-[56px] font-bold">اجعل رحلتـك أكثر تحـدياً</h1>
-            <h2 className="text-[26px] font-semibold mt-2">
+            <h1 className="text-[calc(1rem+2vw)] font-bold">
+              اجعل رحلتـك أكثر تحـدياً
+            </h1>
+            <h2 className="text-[calc(1rem+0.8vw)] font-semibold mt-2">
               اسـكتشف العديد من الرحلات و الخدمات الرائعة
             </h2>
           </div>

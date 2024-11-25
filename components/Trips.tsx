@@ -20,7 +20,7 @@ const Trips = () => {
 
   const handleResize = useCallback(() => {
     const width = window.innerWidth;
-    setPageWidth(width >= 1440 ? 3 : width >= 1024 ? 2.1 : 2);
+    setPageWidth(width >= 1440 ? 3 : width >= 1024 ? 2.1 : 1.35);
   }, []);
 
   useEffect(() => {
@@ -41,7 +41,7 @@ const Trips = () => {
       <Image src={tree} alt="trips" className="absolute -bottom-[4.5rem]" />
 
       <div className="flex justify-center py-[32px] relative">
-        <div className="flex flex-col w-[90%] max-w-[1920px]">
+        <div className="flex flex-col w-[95%] lg:w-[90%] max-w-[1920px]">
           <div className="flex justify-end">
             <Link href="#">
               <Button
@@ -55,17 +55,47 @@ const Trips = () => {
               </Button>
             </Link>
           </div>
-          <div className="flex justify-between gap-10">
-            <div className="w-[25%]">
+          <div className="w-[70%] block md:hidden ">
+            <div>
               <h2 className="text-secondary font-bold text-3xl">
                 الرحلات السياحية
               </h2>
               <p className=" text-primary font-bold text-2xl mt-[1rem]">
-                استمتع باستكشاف رحلتك <br /> السياحية المميزة
+                استمتع باستكشاف رحلتك السياحية المميزة
               </p>
-              <div className="flex items-center gap-3 mt-[3rem]">
+            </div>
+            <div className="flex items-center gap-3 mt-[1rem] lg:mt-[3rem]">
+              <div
+                className="rounded-full border p-[1px] lg:p-[6px] bg-white prev-button group hover:bg-secondary duration-250"
+                onClick={() => swiper.slidePrev()}
+              >
+                <IoIosArrowRoundForward
+                  size={55}
+                  className="duration-250 text-zinc-400 group-hover:text-white"
+                />
+              </div>
+              <div
+                className="rounded-full border p-[1px] lg:p-[6px] bg-white next-button group hover:bg-secondary duration-250"
+                onClick={() => swiper.slideNext()}
+              >
+                <IoIosArrowRoundBack
+                  size={55}
+                  className="text-zinc-400 group-hover:text-white duration-250"
+                />
+              </div>
+            </div>
+          </div>
+          <div className="flex justify-between gap-10">
+            <div className="w-[25%] hidden md:block">
+              <h2 className="text-secondary font-bold text-3xl">
+                الرحلات السياحية
+              </h2>
+              <p className=" text-primary font-bold text-2xl mt-[1rem]">
+                استمتع باستكشاف رحلتك السياحية المميزة
+              </p>
+              <div className="flex items-center gap-3 mt-[1rem] lg:mt-[3rem]">
                 <div
-                  className="rounded-full border p-[6px] bg-white prev-button group hover:bg-secondary duration-250"
+                  className="rounded-full border p-[1px] lg:p-[6px] bg-white prev-button group hover:bg-secondary duration-250"
                   onClick={() => swiper.slidePrev()}
                 >
                   <IoIosArrowRoundForward
@@ -74,7 +104,7 @@ const Trips = () => {
                   />
                 </div>
                 <div
-                  className="rounded-full border p-[6px] bg-white next-button group hover:bg-secondary duration-250"
+                  className="rounded-full border p-[1px] lg:p-[6px] bg-white next-button group hover:bg-secondary duration-250"
                   onClick={() => swiper.slideNext()}
                 >
                   <IoIosArrowRoundBack
@@ -87,7 +117,7 @@ const Trips = () => {
             <Swiper
               simulateTouch
               slidesPerView={pageWidth}
-              className="w-[100%]"
+              className=" w-full lg:w-[70%] xl:w-full"
               modules={[Navigation]}
               navigation={{
                 nextEl: ".next-button",

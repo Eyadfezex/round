@@ -14,7 +14,13 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="ar" dir="rtl">
-      <body className="font-cairo">
+      <head>
+        <meta
+          property="og:image"
+          content="https://i.ibb.co/417VtbG/image-2024-11-25-170725886.png"
+        />
+      </head>
+      <body className="font-cairo ">
         <NavBar />
         <main className="overflow-hidden">{children}</main>
         <Footer />

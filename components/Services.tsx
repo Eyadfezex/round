@@ -14,12 +14,12 @@ const Services = () => {
       <Image
         src={sun}
         alt="sun"
-        className="absolute bottom-[12rem] xl:bottom-[7rem] xl:right-[14rem] right-[5rem] group-hover:bottom-[10rem] xl:group-hover:bottom-[4rem] xl:group-hover:right-[8rem] duration-250"
+        className="hidden lg:block absolute bottom-[7rem] xl:bottom-[7rem] xl:right-[14rem] right-[5rem] group-hover:bottom-[5rem] xl:group-hover:bottom-[4rem] group-hover:right-[4rem] xl:group-hover:right-[8rem] duration-250"
       />
-      <div className="flex justify-center py-[4rem]">
-        <div className="flex justify-center gap-5  w-[90%] xl:w-[80%] max-w-[1920px]">
-          <div className="relative w-full xl:w-[38rem] 2xl:w-[45rem] h-[40rem]">
-            <div className="relative w-[250px] h-[350px] xl:w-[297px] top-20 xl:h-[447px] rounded-full overflow-hidden z-10 group-hover:top-[7.8rem] duration-250">
+      <div className="flex justify-center py-[2rem] lg:py-[4rem]">
+        <div className="flex justify-center gap-5  w-[95%] lg:w-[90%] xl:w-[80%] max-w-[1920px]">
+          <div className="relative w-full xl:w-[38rem] 2xl:w-[45rem] h-[40rem] hidden lg:block">
+            <div className="relative w-[250px] h-[350px] xl:w-[297px] top-[10rem] xl:h-[447px] rounded-full overflow-hidden z-10 group-hover:top-[11.5rem] xl:group-hover:top-[7.8rem] duration-250">
               <Image
                 src={place6}
                 alt="image"
@@ -28,7 +28,7 @@ const Services = () => {
                 className="absolute w-full h-full object-cover group-hover:scale-110 duration-250"
               />
             </div>
-            <div className="absolute w-[300px] h-[500px] xl:w-[343px] top-0 left-[15%] xl:left-[20%] 2xl:left-[30%] group-hover:left-[20%] xl:group-hover:left-[34%] group-hover:-top-[1rem] duration-250  xl:h-[581px] rounded-full rounded-bl-[120rem] overflow-hidden">
+            <div className="absolute w-[300px] h-[500px] xl:w-[343px] top-[3rem] left-[15%] xl:left-[20%] 2xl:left-[30%] group-hover:left-[20%] xl:group-hover:left-[34%] group-hover:top-[2rem] xl:group-hover:-top-[1rem] duration-250  xl:h-[581px] rounded-full rounded-bl-[120rem] overflow-hidden">
               <Image
                 src={place7}
                 alt="image"
@@ -38,7 +38,7 @@ const Services = () => {
               />
             </div>
           </div>
-          <div className="flex flex-col items-start w-full xl:w-[40%] gap-[2rem]">
+          <div className="flex flex-col items-center w-full xl:w-[40%] gap-[2rem]">
             <h2 className="font-bold text-2xl text-tertiary">الخدمات</h2>
             <p className="text-primary font-bold text-lg">
               توفر شركة Round In Oman العديد من الخدمات <br /> المتنوعة والمميزة

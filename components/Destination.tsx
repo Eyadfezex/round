@@ -42,7 +42,7 @@ const Destination = () => {
         alt="circle"
         className="absolute -right-[9rem] top-[112px]"
       />
-      <div className="flex justify-center py-[126px]">
+      <div className="flex justify-center pt-[200px] pb-[100px] lg:py-[126px]">
         <div className="flex flex-col items-center w-[90%] max-w-[1920px] gap-[3rem]">
           <div className="text-center">
             <h2 className="font-bold text-tertiary text-2xl ">
