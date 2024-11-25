@@ -1,7 +1,7 @@
 "use client";
 import React, { useState } from "react";
 import signin from "@/public/signin.png";
-import countryCodes from "country-codes-list";
+import countryCodes, { CountryProperty } from "country-codes-list";
 import circle from "@/public/svgs/circle.svg";
 import sun from "@/public/svgs/whitesun.svg";
 import logo from "@/public/logo.png";
@@ -14,7 +14,7 @@ import ReactCountryFlag from "react-country-flag";
 const SignUp = () => {
   const myCountryCodesArray = Object.values(
     countryCodes.customList(
-      "countryCode",
+      "countryCode" as unknown as CountryProperty,
       "[{countryCode}] {countryNameEn}: +{countryCallingCode}"
     )
   )
