@@ -6,3 +6,11 @@
 .body {
   font-family: "Cairo", sans-serif;
 }
+.swiper-slide {
+  width: fit-content !important;
+}
+
+.swiper-wrapper {
+  gap: 3rem;
+  width: 100% !important;
+}
