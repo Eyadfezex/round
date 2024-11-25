@@ -122,8 +122,8 @@ const Search = () => {
                     <IoIosArrowDropdown className="text-secondary" size={20} />
                   </div>
                 </DropdownTrigger>
-                <DropdownMenu className="w-[30rem] flex justify-end">
-                  <DropdownItem>
+                <DropdownMenu className="w-[30rem] flex justify-end ">
+                  <DropdownItem className="px-10">
                     <Slider
                       color="secondary"
                       maxValue={500}
