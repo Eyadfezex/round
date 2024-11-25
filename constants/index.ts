@@ -7,6 +7,10 @@ import place2 from "@/public/place2.png";
 import place3 from "@/public/place3.png";
 import place4 from "@/public/place4.png";
 import place5 from "@/public/place5.png";
+import trip1 from "@/public/trip1.png";
+import trip2 from "@/public/place2.png";
+import trip3 from "@/public/trip3.png";
+import trip4 from "@/public/trip4.png";
 interface SocialIcon {
   icon: IconType;
   name: string;
@@ -90,4 +94,67 @@ export const footerLinks = [
   { name: "سياسات الخصوصية", url: "/privacy" },
   { name: "الأسئلة الشائعة", url: "/faq" },
   { name: "تواصل معنا", url: "/contact" },
+];
+
+export const trips = [
+  {
+    title: "الرحلة الاقتصادية",
+    price: 50,
+    rate: "4.5",
+    img: trip1,
+  },
+  {
+    title: "الرحلة العائلية",
+    price: 30,
+    rate: "4.3",
+    img: trip2,
+  },
+  {
+    title: "رحلة الأصدقاء",
+    price: 40,
+    rate: "4.7",
+    img: trip3,
+  },
+  {
+    title: "الرحلة الثقافية",
+    price: 70,
+    rate: "4.4",
+    img: trip4,
+  },
+  {
+    title: "الرحلة المغامرات",
+    price: 60,
+    rate: "4.6",
+    img: trip2,
+  },
+  {
+    title: "رحلة الاستجمام",
+    price: 55,
+    rate: "4.8",
+    img: trip1,
+  },
+  {
+    title: "رحلة نهاية الأسبوع",
+    price: 45,
+    rate: "4.3",
+    img: trip3,
+  },
+  {
+    title: "الرحلة الرومانسية",
+    price: 65,
+    rate: "4.9",
+    img: trip4,
+  },
+  {
+    title: "الرحلة السياحية",
+    price: 35,
+    rate: "4.2",
+    img: trip1,
+  },
+  {
+    title: "رحلة الأصدقاء",
+    price: 50,
+    rate: "4.5",
+    img: trip3,
+  },
 ];
