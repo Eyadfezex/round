@@ -22,16 +22,19 @@ import { motion } from "framer-motion";
 
 const NavBar = () => {
   const pathname = usePathname();
-  if (pathname === "/signin") {
-    return null;
-  }
   const [isOpen, setOpen] = useState(false);
+
   const handleOpen = () => {
     setOpen((prevState) => !prevState);
     setTimeout(() => {
       setOpen(false);
     }, 3000);
   };
+
+  // Only render the NavBar if not on the signin page
+  if (pathname === "/signin") {
+    return null;
+  }
   return (
     <header className="absolute w-full z-10 text-white overflow-x-clip">
       <nav className="flex justify-center pt-[15.6px] pb-[28.8px] bg-black bg-opacity-60">
