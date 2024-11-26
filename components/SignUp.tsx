@@ -70,7 +70,7 @@ const SignUp = () => {
         className="absolute -left-[5rem] -top-[5rem]"
       />
       <div className="flex justify-center py-[2rem] h-full">
-        <div className="flex justify-center lg:justify-start items-center w-full lg:w-[90%] max-w-[1920px] h-full gap-[7rem]">
+        <div className="flex justify-center lg:justify-start items-center w-[95%] xl:w-[90%] max-w-[1920px] h-full gap-[3rem] xl:gap-[7rem]">
           <div className="relative hidden lg:block h-full w-[50%] max-w-[581px] text-white xl:max-w-[750px] rounded-[44px] overflow-hidden ">
             <Image
               src={signin}
@@ -93,7 +93,7 @@ const SignUp = () => {
             </div>
           </div>
 
-          <div className="flex flex-col gap-[3rem] items-center border p-[30px] pt-[70px] rounded-[33px] w-[90%] lg:w-[40%] h-fit">
+          <div className="flex flex-col gap-[3rem] items-center border p-[30px] pt-[70px] rounded-[33px] w-[90%] lg:w-[50%] xl:w-[40%] h-fit">
             <div className="flex items-center flex-col gap-5">
               <Image src={logo} alt="logo" width={120} />
               <div className="text-center">
