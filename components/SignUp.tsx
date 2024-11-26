@@ -104,7 +104,7 @@ const SignUp = () => {
               </div>
             </div>
 
-            <div className="flex flex-col items-center gap-[2rem] w-full">
+            <div className="flex flex-col items-center gap-[2rem] w-full relative">
               <Input
                 name="fullName"
                 type="text"
@@ -158,7 +158,7 @@ const SignUp = () => {
               </div>
 
               <motion.div
-                className="w-[15rem] h-[30rem] overflow-y-scroll absolute left-10 -bottom-[10rem] z-10 bg-white rounded-lg shadow-lg"
+                className="w-[15rem] h-[30rem] overflow-y-scroll absolute left-0  -bottom-[60%] z-10 bg-white rounded-lg shadow-lg"
                 initial={{ opacity: 0 }}
                 animate={{ opacity: active ? 1 : 0 }}
                 transition={{ duration: 0.2 }}
